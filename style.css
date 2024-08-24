@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+}
+
+:root {
+    --clr-primary100: #FFFFFF;
+    --clr-primary200: #F8FAFC;
+    --clr-primary900: #111729;
+    --clr-secondary300: #CDD5E0;
+    --clr-secondary700: #4036A9;
+
+    --ff-primary: "Be Vietnam Pro", sans-serif;
+
+    --fs-sm: 0.875rem;
+    --fs-base: 1rem;
+    --fs-lg: 1.25rem;
+    --fs-xl: 2rem;
+    --fs-2xl: 4rem;
+
+    --padding: 3em;
+}
+
+body {
+    font-family: var(--ff-primary);
+    color: var(--clr-primary100);
+    font-style: normal;
+    min-height: 100vh;
+    background-image: url(imgs/bg-image.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 3em;
+}
+
+.container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+.header {
+    padding-top: 1em;
+}
+
+.main {
+    padding-top: var(--padding);
+}
+
+.main__intro {
+    text-align: center;
+}
+
+h1 {
+    font-size: var(--fs-xl);
+    line-height: 1.3;
+}
+
+p {
+    color: var(--clr-primary200);
+    font-size: var(--fs-sm);
+    line-height: 1.3;
+    margin-top: 1em;
+}
+
+.main__form {
+    font-size: .75rem;
+    margin-top: var(--padding);
+    padding: 1.5em;
+    border-radius: 1em;
+    background-color: #cdd5e02b;
+    backdrop-filter: blur(10px);
+    padding-bottom: 5em;
+}
+
+form {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "name"
+        "email"
+        "size"
+        "subj"
+        "msg"
+        "btn";
+        gap: .8rem;
+}
+
+input,
+textarea,
+select,
+button {
+    padding: 1em;
+    border-radius: .5rem;
+    border: none;
+    width: 100%;
+}
+
+input::placeholder {
+    color: rgba(205, 213, 224, 1);
+}
+
+textarea::placeholder {
+    color: var(--clr-primary900);
+    font-weight: 600;
+}
+
+textarea {
+    resize: none;
+    min-height: 10rem;
+}
+
+select {
+    color: var(--clr-primary900);
+    font-weight: 600;
+}
+
+label {
+    display: block;
+    font-size: .6rem;
+    margin-bottom: .3rem;
+}
+
+button {
+    color: var(--clr-secondary700);
+    font-weight: 700;
+    padding-top: 1.5em;
+    padding-bottom: 1.5em;
+    transition: all .25s;
+}
+
+button:hover {
+    cursor: pointer;
+    opacity: .8;
+}
+
+.msg {
+    grid-area: msg;
+}
+
+.name {
+    grid-area: name;
+}
+
+.email {
+    grid-area: email;
+}
+
+.size {
+    grid-area: size;
+}
+
+.subj {
+    grid-area: subj;
+}
+.btn{
+    grid-area: btn;
+}
+
+
+
+@media (min-width: 640px) {
+    .container {
+        max-width: 640px;
+    }
+
+    form {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "name email"
+            "size subj"
+            "msg msg"
+            "btn btn";
+            gap: .8rem;
+    }
+    .msg, .name, .email, .size, .subj{
+        display: flex;
+        flex-direction: column;
+    }
+    .main__form {
+        padding-bottom: 1.5em;
+    }
+}
+
+@media (min-width: 1024px) {
+    h1{
+        font-size: var(--fs-2xl);
+        line-height: 1.2;
+    }
+    p{
+        font-size: var(--fs-lg);
+    }
+    .header.container{
+        max-width: 100%;
+        padding-left: 3em;
+    }
+}
